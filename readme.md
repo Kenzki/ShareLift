@@ -32,11 +32,11 @@ Pre-requisites:
 
 To get the code for a specific branch:
 
-`$ git clone -b branch-name https://github.com/simonholmes/getting-MEAN-2.git`
+`$ git clone https://github.com/Kenzki/ShareLift
 
 Then change into the folder the git clone command will create:
 
-`$ cd getting-MEAN-2`
+`$ cd ShareLift
 
 And finally install the dependencies:
 
