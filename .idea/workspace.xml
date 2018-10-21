@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="63c54d0b-991c-420b-9819-4682416ae6b4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_server/controllers/locations.js" beforeDir="false" afterPath="$PROJECT_DIR$/app_server/controllers/locations.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_server/views/location-info.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app_server/views/location-info.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_server/views/location-review-form.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app_server/views/location-review-form.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app_server/views/locations-list.pug" beforeDir="false" afterPath="$PROJECT_DIR$/app_server/views/locations-list.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/stylesheets/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" afterDir="false" />
-    </list>
+    <list default="true" id="63c54d0b-991c-420b-9819-4682416ae6b4" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -286,12 +277,12 @@
       <option name="presentableId" value="Default" />
       <updated>1540068464884</updated>
       <workItem from="1540068469975" duration="7308000" />
-      <workItem from="1540155298587" duration="7972000" />
+      <workItem from="1540155298587" duration="8248000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15280000" />
+    <option name="totallyTimeSpent" value="15556000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
