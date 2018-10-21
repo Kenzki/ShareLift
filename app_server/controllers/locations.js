@@ -6,25 +6,32 @@ const homelist = function(req, res){
       title: 'ShareLift',
       strapline: 'Find lifts near you!'
     },
-    sidebar: "ShareLift - Add a Journey or Find a Journey",
+    sidebar: {
+      title: 'Lift Sharing - add or find a journey',
+      addJourney: 'Add a Journey',
+      findJourney: 'Find a Journey',
+    },
+
     locations: [{
         name: 'Kenneth Malon',
         address: '125 High Street, Reading, RG6 1PS',
         rating: 4,
-        facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-        distance: '100m'
+        departure: 'Killarney',
+        destination: 'Tralee',
+        date: '21 October 2018',
+        time: '8:00am',
     }, {
-        name: 'Cafe Hero',
+        name: 'Joe Bloggs',
         address: '125 High Street, Reading, RG6 1PS',
         rating: 4,
-        facilities: ['Hot drinks', 'Food', 'Premium wifi'],
-        distance: '200m'
+
+
     }, {
-        name: 'Burger Queen',
+        name: 'David Ryan',
         address: '125 High Street, Reading, RG6 1PS',
         rating: 2,
-        facilities: ['Food', 'Premium wifi'],
-        distance: '250m'
+
+
     }]
   });
 };
@@ -81,8 +88,8 @@ const locationInfo = function(req, res){
 /* GET 'Add review' page */
 const addReview = function(req, res){
   res.render('location-review-form', {
-    title: 'Review Starcups on Loc8r',
-    pageHeader: { title: 'Review Starcups' }
+    title: 'Review Kenneth Malon on ShareLift',
+    pageHeader: { title: 'Feedback for Kenneth Malon' }
   });
 };
 
