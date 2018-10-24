@@ -7,21 +7,21 @@ const homeList = function(req, res){
       strapline: 'Find lifts near you!'
     },
     sidebar: {
-      title: 'Lift Sharing - add or find a journey',
-      addJourney: 'Add a Journey',
-      findJourney: 'Find a Journey',
+      title: 'Lift Sharing - add or find a Journey',
+      addJourney: 'Add Journey',
+      findJourney: 'Find Journey',
     },
 
     journeys: [{
         name: 'Kenneth Malon',
-        address: '125 High Street, Reading, RG6 1PS',
+        address: '1605 Park Court, Killarney, Co.Kerry',
         rating: 4,
         departure: 'Killarney',
         destination: 'Tralee',
         date: '21 October 2018',
         time: '8:00am',
     }, {
-        name: 'Kenneth Malon',
+        name: 'Joe Bloggs',
         address: '125 High Street, Reading, RG6 1PS',
         rating: 4,
         departure: 'Killarney',
@@ -37,47 +37,36 @@ const homeList = function(req, res){
 /* GET 'Location info' page */
 const journeyInfo = function(req, res){
   res.render('journey-info', {
-    title: 'Starcups',
+    title: 'Journey Details',
     pageHeader: {
-      title: 'Starcups'
-    },
-    sidebar: {
-      context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
-      callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
+      title: 'Killarney - Tralee'
     },
     journey: {
-      name: 'Starcups',
-      address: '125 High Street, Reading, RG6 1PS',
-      rating: 3,
-      facilities: ['Hot drinks', 'Food', 'Premium wifi'],
+      name: 'Kenneth Malon',
+      departure: 'Killarney',
+      destination: 'Tralee',
+      address: '1605 Park Court, Killarney, Co.Kerry',
+      rating: 4,
+      date: '21 October 2018',
+      time: '8:00am',
       coords: {
         lat: 51.455041,
         lng: -0.9690884
       },
-      openingTimes: [{
-        days: 'Monday - Friday',
-        opening: '7:00am',
-        closing: '7:00pm',
-        closed: false
-      }, {
-        days: 'Saturday',
-        opening: '8:00am',
-        closing: '5:00pm',
-        closed: false
-      }, {
-        days: 'Sunday',
-        closed: true
-      }],
-      reviews: [{
-        author: 'Simon Holmes',
+      descriptionText: 'I am looking for passengers for Tralee Institute of Technology. Who is willing to chip in for petrol costs.',
+      contact: '0838327088',
+      email: 'kennethmalon@hotmail.ie',
+
+      feedbacks: [{
+        author: 'Joe Bloggs',
         rating: 5,
-        timestamp: '16 July 2013',
-        reviewText: 'What a great place. I can\'t say enough good things about it.'
-      }, {
+        timestamp: '20 October 2018',
+        feedbackText: 'Impressive driver.'
+      },{
         author: 'Charlie Chaplin',
-        rating: 3,
-        timestamp: '16 June 2013',
-        reviewText: 'It was okay. Coffee wasn\'t great, but the wifi was fast.'
+        rating: 4,
+        timestamp: '21 October 2018',
+        feedbackText: 'It was okay.'
       }]
     }
   });

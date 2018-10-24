@@ -24,9 +24,11 @@ block content
 
 
     .col-12.col-md-4
-      h5 #{sidebar.title}
-      h4
-        a(href="/addJourney")= sidebar.addJourney
+      .card
+        .card-block
+          h5 #{sidebar.title}
+          h4
+            a(href="/addJourney")= sidebar.addJourney
 
-      h4
-        a(href='/others/')= sidebar.findJourney
+          h4
+            a(href='/others/')= sidebar.findJourney

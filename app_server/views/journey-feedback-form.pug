@@ -8,11 +8,11 @@ block content
     .col-12.col-md-8
       form(action="/journey", method="get", role="form")
         .form-group.row
-          label.col-10.col-sm-2.col-form-label(for="name") Name
+          label.col-10.col-sm-2.col-form-label(for="name") Name:
           .col-12.col-sm-10
             input#name.form-control(name="name")
         .form-group.row
-          label.col-10.col-sm-2.col-form-label(for="rating") Rating
+          label.col-10.col-sm-2.col-form-label(for="rating") Rating:
           .col-12.col-sm-2
             select#rating.form-control.input-sm(name="rating")
               option 5
@@ -21,8 +21,8 @@ block content
               option 2
               option 1
         .form-group.row
-          label.col-sm-2.col-form-label(for="review") Feedback
+          label.col-sm-2.col-form-label(for="feedback") Feedback:
           .col-sm-10
-            textarea#review.form-control(name="review", rows="5")
+            textarea#feedback.form-control(name="feedback", rows="5")
         button.btn.btn-primary.float-right Add my Feedback
-    .col-12.col-md-4
+

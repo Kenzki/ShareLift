@@ -7,50 +7,42 @@ block content
     .col-12
       h1= pageHeader.title
   .row
-    .col-12.col-lg-9
+    .col-12.col-lg-12
       .row
         .col-12.col-md-6
-          p.rating
-            +outputRating(journey.rating)
-          p 125 High Street, Reading, RG6 1PS
           .card.card-primary
             .card-block
-              h2.card-title Opening hours
-              each time in journey.openingTimes
-                p.card-text
-                  | #{time.days} : 
-                  if time.closed
-                    | closed
-                  else
-                    | #{time.opening} - #{time.closing}
+              h3.card-title Journey Details
+              h5 #{journey.departure} - #{journey.destination}
+              p.name= journey.name
+               small &nbsp;
+                +outputRating(journey.rating)
+              .address= journey.address
+              small.date #{journey.date} at #{journey.time}
           .card.card-primary
             .card-block
-              h2.card-title Facilities
-              each facility in journey.facilities
-                span.badge.badge-warning
-                  i.fa.fa-check
-                  | &nbsp;#{facility}
-                | &nbsp;
+              h3.card-title Description
+              p.text= journey.descriptionText
+              small.email Email: #{journey.email}
+                .contact Phone Number: #{journey.contact}
         .col-12.col-md-6.location-map
           .card.card-primary
             .card-block
-              h2.card-title Location map
+              h3.card-title Location map
               img.img-fluid.rounded(src=`http://maps.googleapis.com/maps/api/staticmap?center=${journey.coords.lat},${journey.coords.lng}&zoom=17&size=400x350&sensor=false&markers=${journey.coords.lat},${journey.coords.lng}&scale=2`)
       .row
         .col-12
           .card.card-primary.review-card
             .card-block
               a.btn.btn-primary.float-right(href='/journey/feedback/new') Add Feedback
-              h2.card-title Feedback Summary
-              each review in journey.reviews
+              h3.card-title Feedback Summary
+              each feedback in journey.feedbacks
                 .row.review
                   .col-12.no-gutters.review-header
                     span.rating
-                      +outputRating(review.rating)
-                    span.reviewAuthor #{review.author}
-                    small.reviewTimestamp #{review.timestamp}
+                      +outputRating(feedback.rating)
+                    span.reviewAuthor #{feedback.author}
+                    small.reviewTimestamp #{feedback.timestamp}
                   .col-12
-                    p !{(review.reviewText).replace(/\n/g, '<br/>')}
-    .col-12.col-lg-3
-      p.lead #{journey.name} #{sidebar.context}
-      p= sidebar.callToAction
+                    p !{(feedback.feedbackText).replace(/\n/g, '<br/>')}
+
