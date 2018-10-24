@@ -11,12 +11,12 @@ block content
       .row
         .col-12.col-md-6
           p.rating
-            +outputRating(location.rating)
+            +outputRating(journey.rating)
           p 125 High Street, Reading, RG6 1PS
           .card.card-primary
             .card-block
               h2.card-title Opening hours
-              each time in location.openingTimes
+              each time in journey.openingTimes
                 p.card-text
                   | #{time.days} : 
                   if time.closed
@@ -26,7 +26,7 @@ block content
           .card.card-primary
             .card-block
               h2.card-title Facilities
-              each facility in location.facilities
+              each facility in journey.facilities
                 span.badge.badge-warning
                   i.fa.fa-check
                   | &nbsp;#{facility}
@@ -35,14 +35,14 @@ block content
           .card.card-primary
             .card-block
               h2.card-title Location map
-              img.img-fluid.rounded(src=`http://maps.googleapis.com/maps/api/staticmap?center=${location.coords.lat},${location.coords.lng}&zoom=17&size=400x350&sensor=false&markers=${location.coords.lat},${location.coords.lng}&scale=2`)
+              img.img-fluid.rounded(src=`http://maps.googleapis.com/maps/api/staticmap?center=${journey.coords.lat},${journey.coords.lng}&zoom=17&size=400x350&sensor=false&markers=${journey.coords.lat},${journey.coords.lng}&scale=2`)
       .row
         .col-12
           .card.card-primary.review-card
             .card-block
-              a.btn.btn-primary.float-right(href='/location/review/new') Add Feedback
+              a.btn.btn-primary.float-right(href='/journey/feedback/new') Add Feedback
               h2.card-title Feedback Summary
-              each review in location.reviews
+              each review in journey.reviews
                 .row.review
                   .col-12.no-gutters.review-header
                     span.rating
@@ -52,5 +52,5 @@ block content
                   .col-12
                     p !{(review.reviewText).replace(/\n/g, '<br/>')}
     .col-12.col-lg-3
-      p.lead #{location.name} #{sidebar.context}
+      p.lead #{journey.name} #{sidebar.context}
       p= sidebar.callToAction

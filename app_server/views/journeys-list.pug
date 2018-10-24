@@ -1,0 +1,32 @@
+extends layout
+
+include _includes/sharedHTMLfunctions
+
+block content
+  .row.banner
+    .col-12
+      h1= pageHeader.title
+        small &nbsp;#{pageHeader.strapline}
+  .row
+    .col-12.col-md-8
+
+      each journey in journeys
+        .card
+          .card-block
+            h4
+              a(href="/journey")= journey.name
+              small &nbsp;
+                +outputRating(journey.rating)
+            h5 #{journey.departure} - #{journey.destination}
+            p.address= journey.address
+            small.date #{journey.date} at #{journey.time}
+
+
+
+    .col-12.col-md-4
+      h5 #{sidebar.title}
+      h4
+        a(href="/addJourney")= sidebar.addJourney
+
+      h4
+        a(href='/others/')= sidebar.findJourney

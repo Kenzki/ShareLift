@@ -1,6 +1,6 @@
 /* GET 'home' page */
-const homelist = function(req, res){
-  res.render('locations-list', {
+const homeList = function(req, res){
+  res.render('journeys-list', {
     title: 'ShareLift - find lifts near you',
     pageHeader: {
       title: 'ShareLift',
@@ -12,7 +12,7 @@ const homelist = function(req, res){
       findJourney: 'Find a Journey',
     },
 
-    locations: [{
+    journeys: [{
         name: 'Kenneth Malon',
         address: '125 High Street, Reading, RG6 1PS',
         rating: 4,
@@ -21,15 +21,13 @@ const homelist = function(req, res){
         date: '21 October 2018',
         time: '8:00am',
     }, {
-        name: 'Joe Bloggs',
+        name: 'Kenneth Malon',
         address: '125 High Street, Reading, RG6 1PS',
         rating: 4,
-
-
-    }, {
-        name: 'David Ryan',
-        address: '125 High Street, Reading, RG6 1PS',
-        rating: 2,
+        departure: 'Killarney',
+        destination: 'Tralee',
+        date: '21 October 2018',
+        time: '8:00am',
 
 
     }]
@@ -37,8 +35,8 @@ const homelist = function(req, res){
 };
 
 /* GET 'Location info' page */
-const locationInfo = function(req, res){
-  res.render('location-info', {
+const journeyInfo = function(req, res){
+  res.render('journey-info', {
     title: 'Starcups',
     pageHeader: {
       title: 'Starcups'
@@ -47,7 +45,7 @@ const locationInfo = function(req, res){
       context: 'is on Loc8r because it has accessible wifi and space to sit down with your laptop and get some work done.',
       callToAction: 'If you\'ve been and you like it - or if you don\'t - please leave a review to help other people just like you.'
     },
-    location: {
+    journey: {
       name: 'Starcups',
       address: '125 High Street, Reading, RG6 1PS',
       rating: 3,
@@ -86,15 +84,23 @@ const locationInfo = function(req, res){
 };
 
 /* GET 'Add review' page */
-const addReview = function(req, res){
-  res.render('location-review-form', {
+const addFeedback = function(req, res){
+  res.render('journey-feedback-form', {
     title: 'Review Kenneth Malon on ShareLift',
     pageHeader: { title: 'Feedback for Kenneth Malon' }
   });
 };
 
+const addJourney = function(req, res){
+    res.render('add-journey-form', {
+        title: 'Add Journey',
+        pageHeader: { title: 'Fill the details of your journey' }
+    });
+};
+
 module.exports = {
-  homelist,
-  locationInfo,
-  addReview
+  homeList,
+  journeyInfo,
+  addFeedback,
+  addJourney
 };
