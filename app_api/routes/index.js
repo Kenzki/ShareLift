@@ -3,10 +3,11 @@ const router = express.Router();
 const ctrlJourneys = require('../controllers/journeys');
 //const ctrlFeedbacks = require('../controller/feedbacks');
 
-//journey
+//journeys
 router
     .route('/journeys')
-    .get(ctrlJourneys.journeysCreate);
+    .get(ctrlJourneys.journeysList)
+    .post(ctrlJourneys.journeysCreate);
 
 router
     .route('journeys/:journeyid')

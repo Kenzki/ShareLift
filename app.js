@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 require('./app_api/models/db');
 
 
-//const index = require('./app_server/routes/index');
+const index = require('./app_server/routes/index');
 //const users = require('./app_server/routes/users');
 const apiRoutes = require('./app_api/routes/index');
 
@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', index);
+app.use('/', index);
 //app.use('/users', users);
 app.use('/api', apiRoutes);
 
