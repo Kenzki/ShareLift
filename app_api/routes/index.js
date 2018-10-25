@@ -10,10 +10,11 @@ router
     .post(ctrlJourneys.journeysCreate);
 
 router
-    .route('journeys/:journeyid')
+    .route('/journeys/:journeyid')
     .get(ctrlJourneys.journeysReadOne)
     .put(ctrlJourneys.journeysUpdateOne)
     .delete(ctrlJourneys.journeysDeleteOne);
+
 
 //review
 //router

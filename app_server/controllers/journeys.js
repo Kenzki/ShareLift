@@ -22,7 +22,7 @@ const homeList = function(req, res){
         time: '8:00am',
     }, {
         name: 'Joe Bloggs',
-        address: '125 High Street, Reading, RG6 1PS',
+        address: '125 High Street, Killarney, Co,Kerry',
         rating: 4,
         departure: 'Killarney',
         destination: 'Tralee',

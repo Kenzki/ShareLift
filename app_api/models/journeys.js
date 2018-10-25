@@ -32,7 +32,7 @@ const journeySchema = new mongoose.Schema({
     descriptionText: String,
     contact: String,
     email: String,
-    feedback: [feedBackSchema]
+    feedbacks: [feedBackSchema]
 });
 
 mongoose.model('Journey', journeySchema);
