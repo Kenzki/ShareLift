@@ -1,0 +1,19 @@
+
+<div class="col-12"><h1>ShareLift<small>&nbsp;Find lifts near you!</small></h1></div>
+
+<div class="card" *ngFor="let journey of journeys">
+  <div class="card-block">
+    <h4>
+      <a href="/journey/{{journey._id}}">{{journey.name}}</a>
+      <small>&nbsp;<i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </small>
+    </h4>
+    <h5>{{journey.departure}} - {{journey.destination}}</h5>
+    <p class="address">{{journey.address}}</p>
+    <small class="date">{{journey.date}} {{journey.time}}</small>
+  </div>
+</div>
