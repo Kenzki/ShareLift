@@ -6,7 +6,7 @@ const ctrlJourneys = require('../controllers/journeys');
 //journeys
 router
     .route('/journeys')
-    .get(ctrlJourneys.journeysList)
+    .get(ctrlJourneys.journeysListByDistance)
     .post(ctrlJourneys.journeysCreate);
 
 router
@@ -16,7 +16,7 @@ router
     .delete(ctrlJourneys.journeysDeleteOne);
 
 
-//review
+//feedback
 //router
     //.route('/journeys/:journeysid/feedbacks')
    // .post(ctrlFeedbacks.feedbacksCreate);

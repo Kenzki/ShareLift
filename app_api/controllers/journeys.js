@@ -1,6 +1,59 @@
 const mongoose = require('mongoose');
 const ShareLift = mongoose.model('Journey');
 
+const _buildJourneyList = function (req, res, results, stats) {
+    let journeys = [];
+    results.forEach((doc) =>{
+        journeys.push({
+        distance: doc.dis,
+        name: doc.obj.name,
+        address: doc.obj.address,
+        rating: doc.obj.rating,
+        departure: doc.obj.departure,
+        destination: doc.obj.destination,
+        date: doc.obj.date,
+        time: doc.obj.time,
+        _id: doc.obj._id
+
+        });
+    });
+    return journeys;
+};
+
+const journeysListByDistance = function (req, res) {
+    const lng = parseFloat(req.query.lng);
+    const lat = parseFloat(req.query.lat);
+    const maxDistance = parseFloat(req.query.maxDistance);
+    const point = {
+        type: "Point",
+        coordinates: [lng, lat]
+    };
+    const geoOptions = {
+        spherical: true,
+        maxDistance: 20000,
+        num: 10
+    };
+    if (!lng || !lat || !maxDistance) {
+        console.log('locationsListByDistance missing params');
+        res
+            .status(404)
+            .json({
+                message : 'lng, lat and maxDistance query parameters are all required'
+            });
+        return;
+    }
+    ShareLift.geoNear(point, geoOptions, (err, results, stats) => {
+        const journey = _buildJourneyList(req, res, results, stats);
+        console.log('Geo Results', results);
+        console.log('Geo stats', stats);
+        res
+            .status(200)
+            .json(journey);
+    });
+};
+
+
+
 const journeysCreate  = function (req, res) {
     ShareLift.create({
         name: req.body.name,
@@ -24,11 +77,6 @@ const journeysCreate  = function (req, res) {
     });
 };
 
-const journeysList = function (req, res) {
-    res
-        .status(200)
-        .json({"status" : "success"});
-};
 
 const journeysReadOne = function (req, res) {
     if (req.params && req.params.journeyid) {
@@ -98,9 +146,10 @@ const journeysDeleteOne = function (req, res) {
 
 
 module.exports = {
+    journeysListByDistance,
     journeysCreate,
-    journeysList,
     journeysReadOne,
     journeysUpdateOne,
-    journeysDeleteOne
+    journeysDeleteOne,
+
 };
